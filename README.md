@@ -1,20 +1,18 @@
 # Taller SOLID — Diseño de Software (ESPOL)
 
-Repositorio del taller de principios SOLID organizado en tres secciones.
+Repositorio organizado en tres secciones:
 
-- Seccion-A: ejemplos de los cinco principios SOLID (pendiente).
-- Seccion-B: código original de las páginas 2 y 3 y solución corregida en Java.
-- Seccion-C: ejercicio de compras, pagos y notificaciones (pendiente).
+- **Seccion-A/**: espacio reservado para los ejemplos SOLID.
+- **Seccion-B/**: código original de las páginas 2–3 y código corregido.
+- **Seccion-C/**: espacio reservado para el caso de compras, pagos y notificaciones.
 
-El código original se preserva incluyendo sus defectos, para comparar antes y después.
+La sección B se corrige únicamente para **SRP, OCP y LSP**, siguiendo los ejemplos de las diapositivas de clase.
 
-## Probar sección B
+## Compilar el código corregido de la sección B
 
 ```bash
 cd Seccion-B/codigo-corregido
 javac *.java
-java Main
-java -ea PruebasSOLID
 ```
 
-Fuentes: Taller 03TallerSOLID-1.3 (páginas 2 y 3) y clases de SOLID de la ESPOL.
+El código original se conserva como referencia y puede no compilar.

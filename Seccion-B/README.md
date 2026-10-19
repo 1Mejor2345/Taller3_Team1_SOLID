@@ -1,22 +1,14 @@
-# Sección B — Carrito de compras y principios SOLID
+# Sección B — Principios SOLID
 
-- **codigo-original/**: transcripción de los ejemplos de las páginas 2 y 3; sus errores se mantienen, por lo que no se espera que compile.
-- **codigo-corregido/**: versión funcional en Java con el rediseño SOLID, main y pruebas.
+- **codigo-original/**: código de las páginas 2 y 3 del taller, sin modificar (intencionalmente puede no compilar).
+- **codigo-corregido/**: rediseño mínimo en seis clases Java, solo para **SRP, OCP y LSP**.
 
-## Principios
-- SRP: enviar recibos queda en ReceiptService.
-- OCP: IvaCalculator usa TaxPolicy y elimina el switch.
-- LSP: DigitalProduct deja de redefinir getWeight para lanzar una excepción.
-- ISP: capacidad Weighable solo para productos con peso.
-- DIP: las dependencias de envío e impuestos se expresan mediante abstracciones.
+## Correcciones
 
-## Ejecución
+1. SRP: separar `ReceiptService` de `ShoppingCart`.
+2. OCP: `IvaCalculator` delega en `Product.calculateIVA()` (polimorfismo).
+3. LSP: `getWeight()` solo en `PhysicalProduct`, nunca en `DigitalProduct`.
 
-```bash
-cd Seccion-B/codigo-corregido
-javac *.java
-java Main
-java -ea PruebasSOLID
-```
+Para compilar la carpeta corregida: `cd Seccion-B/codigo-corregido && javac *.java`.
 
-Los porcentajes de impuestos se utilizan únicamente como parte del ejemplo académico.
+Se conserva el enfoque de ejemplos de las diapositivas de Diseño de Software ESPOL.
