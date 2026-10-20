@@ -7,3 +7,4 @@ public class DigitalProduct extends Product {
         throw new UnsupportedOperationException("Digital products have no weight.");
     }
 }
+ 

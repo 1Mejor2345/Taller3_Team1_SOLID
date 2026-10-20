@@ -13,5 +13,5 @@ public class IvaCalculator{
                 break;
         }
         return iva;
-    }
+    } 
 }

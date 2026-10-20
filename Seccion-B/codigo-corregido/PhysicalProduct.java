@@ -6,7 +6,7 @@ public class PhysicalProduct extends Product {
         super(name, price);
         this.weight = weight;
         this.ivaRate = ivaRate;
-    }
+    } 
 
     public double getWeight() {
         return weight;

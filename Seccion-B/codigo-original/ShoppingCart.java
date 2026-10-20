@@ -1,5 +1,3 @@
-
-
 public class ShoppingCart {
     private List<Product> products;
     public void addProduct(Product product) {
@@ -17,4 +15,4 @@ public class ShoppingCart {
         System.out.println("Sending receipt by email...");
         // Lógica para enviar el recibo
     }
-}
+} 

@@ -4,3 +4,4 @@ public class ReceiptService {
         // Logica para enviar el recibo
     }
 }
+ 

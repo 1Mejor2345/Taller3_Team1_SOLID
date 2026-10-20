@@ -14,7 +14,7 @@ public class Product {
         return price;
     }
     public double getWeight() {
-        return weight;
+        return weight; 
     }
     public String getType(){
         return type;
