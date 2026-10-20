@@ -1,0 +1,20 @@
+
+public class NotificacionCorreo  {
+
+    public void enviar(String mensaje) {
+        System.out.println("Correo: " + mensaje);
+    }
+}
+
+public class Hospital {
+
+    private NotificacionCorreo notificador;
+
+    public Hospital(NotificacionCorreo notificador) {
+        this.notificador = notificador;
+    }
+
+    public void recordarCita() {
+        notificador.enviar("Tienes una cita médica mañana");
+    }
+}
