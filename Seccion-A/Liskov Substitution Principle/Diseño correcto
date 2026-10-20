@@ -1,0 +1,59 @@
+
+public class Compras{
+
+    public static void comprarJuego(String id){
+        // Realizar la compra del juego
+    }
+
+}
+
+
+public abstract class Juegos{
+
+    private String id;
+
+    private String descripcion;
+
+    public abstract void descargar();
+
+    public String getId(){
+        return id;
+    }
+
+    public String getDescripcion(){
+        return descripcion;
+    }
+
+    
+}
+
+
+public class JuegoGratis extends Juegos{
+
+    public JuegoGratis(){}
+
+    @Override
+    public void descargar(){
+        System.out.println("Descargando juego gratuito... ");
+        // Ejecución del juego
+    }
+
+}
+
+public class JuegoPagado extends Juegos{
+
+    private double precio;
+
+    public JuegoPagado(double precio){
+        this.precio = precio;
+    }
+
+    @Override
+    public void descargar(){
+
+        System.out.println("Descargando juego...\nCosto: " + precio);
+        // Ejecución del juego
+        
+    }
+
+}

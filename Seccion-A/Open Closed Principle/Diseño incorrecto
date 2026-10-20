@@ -1,0 +1,72 @@
+import java.lang.Math;
+
+public class Combi{
+
+    public static long factorial(int n) {
+
+        if(n < 0) throw new IllegalArgumentException("Parámetros inválidos.");
+
+        long resultado = 1;
+
+        for (int i = 2; i <= n; i++) {
+            resultado *= i;
+        }
+
+        return resultado;
+    }
+
+    public static long binomioNewton(int n, int k){
+
+        if(n < k || k < 0) throw new IllegalArgumentException("Parámetros inválidos.");
+
+        return factorial(n) / (factorial(k) * factorial(n-k));
+
+    }
+
+
+}
+
+public class FuncionProbabilidad{
+
+    private int numEnsayos;
+
+    private double probExito;
+
+    private double lambda;
+
+    private String tipoFuncion;
+
+    public FuncionProbabilidad(int numEnsayos, double probExito, double lambda, String tipoFuncion){
+        
+        if(lambda < 0 || probExito < 0 ||
+           probExito > 1 || numEnsayos < 0) throw new IllegalArgumentException("Parámetros inválidos.");
+
+        this.numEnsayos = numEnsayos;
+        this.probExito = probExito;
+        this.lambda = lambda;
+        this.tipoFuncion = tipoFuncion;
+    }
+
+
+    public double calcularProbabilidad(int k){
+
+        if(tipoFuncion == null) throw new IllegalArgumentException("Parámetros inválidos.");
+
+        if(tipoFuncion.equals("DistribucionBinomial")){
+            if(numEnsayos < k || k < 0) throw new IllegalArgumentException("Parámetros inválidos.");
+
+            return Combi.binomioNewton(numEnsayos, k) * Math.pow(probExito, k) * Math.pow(1 - probExito, numEnsayos - k);
+
+        }else if(tipoFuncion.equals("DistribucionPoisson")){
+
+            double e = Math.E;
+
+            return Math.pow(e, -lambda) * Math.pow(lambda, k) / Combi.factorial(k);
+
+        }else{
+            return -1;
+        }
+
+    }
+}
+

@@ -1,0 +1,42 @@
+public interface Ave{
+
+    public void picotear();
+    public void volar();
+
+}
+
+public class Condor implements Ave{
+
+    public Condor(){}
+
+    @Override
+    public void picotear(){
+
+        System.out.println("El ave está picoteando fuertemente.");
+
+    }
+
+    @Override
+    public void volar(){
+
+        System.out.println("El ave vuela sobre todas las provincias de la Sierra...\n");
+
+    }
+
+}
+
+public class Pinguino implements Ave{
+
+    public Pinguino(){};
+
+    @Override
+    public void picotear(){
+
+        System.out.println("El ave está picoteando débilmente.");
+
+    }
+
+    @Override
+    public void volar(){}
+
+}

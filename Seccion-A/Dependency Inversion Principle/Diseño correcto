@@ -1,0 +1,34 @@
+
+public interface Notificacion {
+    void enviar(String mensaje);
+}
+
+
+public class NotificacionCorreo implements Notificacion {
+
+    @Override
+    public void enviar(String mensaje) {
+        System.out.println("Correo: " + mensaje);
+    }
+}
+
+public class NotificacionSMS implements Notificacion {
+
+    @Override
+    public void enviar(String mensaje) {
+        System.out.println("SMS: " + mensaje);
+    }
+}
+
+public class Hospital {
+
+    private Notificacion notificador;
+
+    public Hospital(Notificacion notificador) {
+        this.notificador = notificador;
+    }
+
+    public void recordarCita() {
+        notificador.enviar("Tienes una cita médica mañana");
+    }
+}
